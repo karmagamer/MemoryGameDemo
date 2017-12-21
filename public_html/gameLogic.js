@@ -181,7 +181,7 @@ window.onload = function () {
 					flippedTiles.splice(0, 1);
 				}
 			}
-			//If the score is 7 and there is only two flipped, the game is over..
+			//check for tiles remaining and score neeed.
 			var scoreNeeded = (((gamesize*gamesize)/2) - 1);
 			if(score === scoreNeeded && flippedTiles.length === 2){
 				//Alert the player they won
