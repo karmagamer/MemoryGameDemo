@@ -1,7 +1,18 @@
 ## Memory Game Node Js Application
 
+Live demo available on heroku and AWS.
+
+https://cryptic-wildwood-82095.herokuapp.com/
+
+or
+
+http://ec2-35-167-12-18.us-west-2.compute.amazonaws.com:8080/
+
+
+
 Goal of this application is to make memory based card flipping game on browser.
 Bottom of this page has steps to launch the application.
+
 
 ##The Rules of the memory game:
 a.     The cards should be laid out in a grid
@@ -38,3 +49,17 @@ I decided to use html, css, and jquery to make the front end of the application.
 and server side logic.
 Below diagrams will help you with understanding of the application.
 ![image](https://user-images.githubusercontent.com/12129202/34258719-127efaea-e614-11e7-8d71-1cab24bc13fe.png)
+
+## How to Install ?
+
+Clone repo
+
+git clone https://github.com/karmagamer/MemoryGameDemo.git
+
+npm install
+
+npm start
+
+go to localhost:8080
+
+If there is an error, it would require you to install mime-types. Please install before proceeding.
