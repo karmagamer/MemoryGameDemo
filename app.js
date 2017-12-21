@@ -7,6 +7,7 @@ var mime = require('mime-types');
 var url = require('url');
 var board = require('./res/makeBoard.js');
 var firebase = require("firebase");
+// initialized firebase to check for submitting to database
 var config = {
     apiKey: "AIzaSyAMnVuq0tHrd-a_uXrQeOqOCE1koneTQAU",
     authDomain: "testmemorygame.firebaseapp.com",
@@ -16,9 +17,11 @@ var config = {
     messagingSenderId: "251282035428"
   };
   firebase.initializeApp(config);
+  //firebase test
 
   var database = firebase.database();
   var test = database.ref('score');
+  //following code gets data from firebase and prints them.
 test.on("child_added",function(snapshot){
   var userScore = snapshot.val();
   console.log("Name " + userScore.username);
@@ -28,10 +31,11 @@ const ROOT = "./public_html";
 
 // create http server
 var server = http.createServer(handleRequest);
+//Simple http server.
 var port = process.env.PORT || 8080;
 server.listen(port);
 console.log('Server listening on port 8080');
-
+// I was planning to add multiple users using socket.io
 var users = {};
 
 function handleRequest(req, res) {
@@ -40,6 +44,7 @@ function handleRequest(req, res) {
 	console.log(req.method+" request for: "+req.url);
 
 	//parse the url
+  // simple jquery method to get the data.
 	var urlObj = url.parse(req.url,true);
 	var filename = ROOT+urlObj.pathname;
 
@@ -81,6 +86,15 @@ function handleRequest(req, res) {
 		res.end(valueJSON);
 
 	}
+
+  //
+  //
+  //
+  // Below code pushes data to firebase.
+  //
+  //
+  //
+
   else if(urlObj.pathname==="/memory/finish"){
 		console.log("new User: "+urlObj.query.username);
     var name = urlObj.query.username;

@@ -1,11 +1,22 @@
 	var person = prompt("Please enter your name");
-	var gamesize = prompt("Select Card Size.");
+	// checking for valid input
+	var gamesize =0;
+	if(/^[A-Za-z\s]+$/.test(person) === false){reset();
+			alert("Game Restarting! Don't fool me !");
+}
+else{// gamesize == card deck. Input is 6 . card deck will be 6x6
+	gamesize = prompt("Select Card Size. Please");
+}
+// checking for valid input
+if(/^-?\d*[02468]$/.test(gamesize)===false){
+	reset();
+	alert("Game Restarting! Don't fool me ! Enter even number");
+}
 
 	var score = 0;
 	var attempts = 0;
 	var scoreLabel = $("<h2>Score: <span id=\"scorePrompt\"></span></h2>");
-	// Initialize Firebase
-	// Initialize Firebase
+	// Time function is based on card size .
 	function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
@@ -25,6 +36,8 @@
 }
 
 window.onload = function () {
+	// Time function is based on card size . 30 seconds multiplied by deck choice.
+	// for example. 6x6 gamesize would give user 30*6 = 180 seconds.
     var remainingTime = 30 * gamesize,
         display = document.querySelector('#time');
     startTimer(remainingTime, display);
@@ -32,9 +45,13 @@ window.onload = function () {
 
 	$("#scorePrompt").append(scoreLabel);
 
+
+// Reset function to reload page incase of error or invalid arguments or to restart the game.
 	function reset(){
 		location.reload();
 	}
+
+
 	function playGame(){
 
 		$.ajax({
@@ -56,12 +73,13 @@ window.onload = function () {
 
 			var indexIncrement = 0;
 
-			//Nested for loop to create the 4x4 gameboard
+			//Nested for loop to create the Tiles on th browser
 			for (var i = 0; i < gamesize; i++){
 
 				var tileObject = $("<tr id=\"row"+i+"\"  > </tr>");
 
-				//Create 4 divs within the row
+				//Create divs according to gamesize
+				//Add the row to the board
 				for(var r=0; r < gamesize; r++){
 				 	var object  = $("<div class='tile' id=\"tileId"+i+r+"\" data-rowindex='"+i+"' data-columnindex='"+r+"'></div> ");
 				 	object.click(chooseTile);
@@ -73,6 +91,7 @@ window.onload = function () {
 
 			}
 			//Add the username to the screen
+
 			$("#userPrompt").append(person);
 		}
 
