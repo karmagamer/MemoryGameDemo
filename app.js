@@ -28,7 +28,8 @@ const ROOT = "./public_html";
 
 // create http server
 var server = http.createServer(handleRequest);
-server.listen(8000);
+var port = process.env.PORT || 8080;
+server.listen(port);
 console.log('Server listening on port 8000');
 
 var users = {};
