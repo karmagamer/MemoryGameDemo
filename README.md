@@ -37,4 +37,4 @@ Bonus Points:
 I decided to use html, css, and jquery to make the front end of the application. Node Js was used for user information management 
 and server side logic.
 Below diagrams will help you with understanding of the application.
-https://user-images.githubusercontent.com/12129202/34258646-ba51cc58-e613-11e7-906c-4987b0711aa1.png
+![image](https://user-images.githubusercontent.com/12129202/34258719-127efaea-e614-11e7-8d71-1cab24bc13fe.png)
