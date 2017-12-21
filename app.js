@@ -1,4 +1,4 @@
-//Used the app.js from colour server tutorial
+
 
 // load necessary modules
 var http = require('http');
