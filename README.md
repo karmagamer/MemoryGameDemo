@@ -43,6 +43,21 @@ Bonus Points:
 * Tracking time
 * Adjustable number of cards in the game (difficulty levels)
 
+## Finished Requirements
+( Everythin except multiplayer support. )
+* Must use NodeJS
+* Must have a README file for building and running the app
+* The cards may be differentiated by colors, numbers, pictures or icons
+* The game must be able to:
+* Notify the user if they win or lose
+* Allow the user to reset at any time
+* Randomize the ‘cards’ layout every game
+* The game grid must be at least 6x6 cards
+* Tracking Scores
+* Tracking Best Score
+* Tracking time
+* Adjustable number of cards in the game (difficulty levels)
+
 ## Approach & Architecture.
 
 I decided to use html, css, and jquery to make the front end of the application. Node Js was used for user information management 
