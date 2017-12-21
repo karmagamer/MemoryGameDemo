@@ -1,6 +1,6 @@
 ## Memory Game Node Js Application
 
-Live demo available on heroku and AWS.
+Live demo available on heroku and AWS. Install locally by following the steps provided at the end.
 
 https://cryptic-wildwood-82095.herokuapp.com/
 
@@ -11,7 +11,7 @@ http://ec2-35-167-12-18.us-west-2.compute.amazonaws.com:8080/
 
 
 Goal of this application is to make memory based card flipping game on browser.
-Bottom of this page has steps to launch the application.
+
 
 
 ##The Rules of the memory game:
