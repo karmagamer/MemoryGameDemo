@@ -1,0 +1,26 @@
+{
+  "name": "memorygamedemo",
+  "version": "1.0.0",
+  "description": "Memory game ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karmagamer/MemoryGameDemo.git"
+  },
+  "author": "karma pandya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karmagamer/MemoryGameDemo/issues"
+  },
+  "homepage": "https://github.com/karmagamer/MemoryGameDemo#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "firebase": "^4.8.1",
+    "mime-types": "^2.1.17",
+    "pug": "^2.0.0-rc.4"
+  }
+}

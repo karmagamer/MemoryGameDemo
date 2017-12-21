@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf8"/>
+	<link rel="stylesheet" href="style.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-database.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAMnVuq0tHrd-a_uXrQeOqOCE1koneTQAU",
+      authDomain: "testmemorygame.firebaseapp.com",
+      databaseURL: "https://testmemorygame.firebaseio.com",
+      projectId: "testmemorygame",
+      storageBucket: "testmemorygame.appspot.com",
+      messagingSenderId: "251282035428"
+    };
+    firebase.initializeApp(config);
+    var database = firebase.database();
+  var test = database.ref('score');
+    test.on("child_added", function(data){
+      childScore = data.val();
+      document.getElementById("scores").innerHTML += childScore.username + "--------" +childScore.gamescore+"--------"+childScore.gamesize+"x"+childScore.gamesize+"<br>";
+    });
+
+  </script>
+
+	<title>Memory Game Test</title>
+</head>
+<body>
+
+	<h1>Memory Game</h1>
+	<h1>By Karma Pandya</h1>
+  <a href="../index.html">go back</a><br>
+	<h2>View User Scores</h2><br>
+<h3> Username -- User Score --Card Deck</h3>
+<div id="scores"> </div>
+
+</body>
